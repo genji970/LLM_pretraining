@@ -1,22 +1,30 @@
-# LLM_pretraining
-repo for llm pretrainig. For record progress
+# LLM Pretraining
 
-In progress
+Repository for recording progress on implementing LLM pretraining from scratch.
 
+## In Progress
 
-1)scaling
-   paper 1-1)
-       training compute optimal large language models : number of tokens and model size should go together. Notes :used Huber loss.
+### 1. Scaling
 
-2) Data
-   paper 2-1) FineWeb
-         2-1-1) related site : https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1?utm_source=chatgpt.com
-         2-1-2) data process library for huge data : https://github.com/huggingface/datatrove
-         2-1-3) For collecting good quality data
-            2-1-3-1) Not low perplexit always good performance.
-               2-1-3-1-1) For medical, math, etc there data has different distribution to wikipedia(clean data). But they are helpful to such domains.
-            2-1-3-2) For each dataset, choose small and train model with them.
-               2-1-3-2-1) require test on multi benchmark for preveting overfitting.
+- **Paper 1-1: Training Compute-Optimal Large Language Models**
+    - The number of training tokens and model size should be scaled together.
+    - Note: The paper used Huber loss for fitting the scaling-law model.
 
+### 2. Data
+
+- **Paper 2-1: FineWeb**
+    - **2-1-1. Related resources**
+        - [FineWeb blog post](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
+    - **2-1-2. Large-scale data processing library**
+        - [Hugging Face DataTrove](https://github.com/huggingface/datatrove)
+    - **2-1-3. Collecting high-quality data**
+        - **Perplexity-based evaluation**
+            - Low perplexity does not always lead to better downstream performance.
+            - Medical, mathematical, and other specialized data may have distributions different from Wikipedia.
+            - Even when such data has high perplexity under a Wikipedia-trained model, it may still be useful for domain-specific tasks.
+        - **Small-model evaluation**
+            - Train small models on representative subsets of candidate datasets.
+            - Evaluate the models on multiple downstream benchmarks.
+            - Using diverse benchmarks helps prevent overfitting the data-selection process to a single benchmark.
    
    
